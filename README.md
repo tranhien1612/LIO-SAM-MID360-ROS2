@@ -87,3 +87,6 @@ ros2 launch lio_sam run.launch.py
 ```
 ros2 service call /lio_sam/save_map lio_sam/srv/SaveMap "{destination: /home/pcd/}"
 ```
+
+## Ref
+[LIO-SAM_MID360_ROS2](https://github.com/UV-Lab/LIO-SAM_MID360_ROS2/tree/main)

@@ -7,6 +7,31 @@ Install ROS2 humble or sing docker images for ros2 humble:
 docker pull ros:humble-ros-base
 ```
 
+Create `run.sh` file to run docker image:
+```
+#!/bin/bash
+IMAGE_NAME="ros:humble-ros-base"
+xhost +local:root
+
+if [ "$(docker ps -q --filter ancestor=$IMAGE_NAME)" ]; then
+    echo "Container ID $(docker ps -q --filter ancestor=$IMAGE_NAME) is running from $IMAGE_NAME image"
+    echo "Attaching to running Container ID $(docker ps -q --filter ancestor=$IMAGE_NAME)"
+    docker exec -it $(docker ps -q --filter ancestor=$IMAGE_NAME) bash
+    exit 0
+else
+    echo "No container is running from image $IMAGE_NAME"
+fi
+#-v $ROS_WS:/home/lidar_ws/ \
+echo "Creating and starting new container from $IMAGE_NAME"
+sudo docker run -it  \
+    --rm \
+    --privileged \
+    --network host \
+    --ipc host \
+    $IMAGE_NAME \
+    /bin/bash
+```
+
 ## Setup
 
 ### Install libs

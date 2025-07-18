@@ -13,7 +13,7 @@ docker pull ros:humble-ros-base
 ```
 sudo apt update
 sudo apt install software-properties-common
-sudo apt install -y libboost-all-dev libpcl-dev liblapack-dev libsuitesparse-dev libcxsparse3 libgflags-dev libgoogle-glog-dev libgtest-dev unzip 
+sudo apt install -y libboost-all-dev libeigen3-dev libpcl-dev liblapack-dev libsuitesparse-dev libcxsparse3 libgflags-dev libgoogle-glog-dev libgtest-dev unzip 
 sudo apt install -y ros-humble-pcl-ros ros-humble-pcl-conversions ros-humble-visualization-msgs  
 
 # Ceres 2.1.0

@@ -16,6 +16,13 @@ sudo apt install software-properties-common
 sudo apt install -y libboost-all-dev libeigen3-dev libpcl-dev liblapack-dev libsuitesparse-dev libcxsparse3 libgflags-dev libgoogle-glog-dev libgtest-dev unzip 
 sudo apt install -y ros-humble-pcl-ros ros-humble-pcl-conversions ros-humble-visualization-msgs  
 
+# Livox SKD2
+git clone https://github.com/Livox-SDK/Livox-SDK2.git
+cd ./Livox-SDK2/
+mkdir build && cd build
+cmake .. && make -j
+sudo make install
+
 # Ceres 2.1.0
 wget -O ceres-solver.zip https://github.com/ceres-solver/ceres-solver/archive/refs/tags/2.1.0.zip
 unzip -q ceres-solver.zip -d .
